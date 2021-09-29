@@ -67,6 +67,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         TextView tvBody;
         TextView tvScreenName;
         TextView tvTime;
+        TextView tvName;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
@@ -74,11 +75,13 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
             tvTime = itemView.findViewById((R.id.tvTime));
+            tvName = itemView.findViewById((R.id.tvName));
         }
 
         public void bind(Tweet tweet) {
             tvBody.setText(tweet.body);
-            tvScreenName.setText(tweet.user.screenName);
+            tvScreenName.setText('@'+tweet.user.screenName);
+            tvName.setText(tweet.user.name);
             tvTime.setText(tweet.getFormattedTimestap(tweet.createdAt));
             Glide.with(context).load(tweet.user.profileImageUrl).transform(new CenterInside(), new RoundedCorners(15)).into(ivProfileImage);
 
@@ -86,7 +89,8 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(context, TweetDetailAcitivity.class);
-                    i.putExtra("name", tweet.user.screenName);
+                    i.putExtra("screenname", tweet.user.screenName);
+                    i.putExtra("name", tweet.user.name);
                     i.putExtra("body", tweet.body);
                     i.putExtra("imageurl", tweet.user.profileImageUrl);
                     i.putExtra("time", tweet.getFormattedTimestap(tweet.createdAt));

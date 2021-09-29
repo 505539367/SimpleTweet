@@ -17,6 +17,7 @@ public class TweetDetailAcitivity extends AppCompatActivity {
     TextView tvBody;
     TextView tvScreenName;
     TextView tvTime;
+    TextView tvName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +26,13 @@ public class TweetDetailAcitivity extends AppCompatActivity {
         ivProfileImage = findViewById(R.id.ivProfileImage);
         tvBody = findViewById(R.id.tvBody);
         tvScreenName = findViewById(R.id.tvScreenName);
+        tvName = findViewById(R.id.tvName);
         tvTime = findViewById((R.id.tvTime));
 
         Intent i = getIntent();
         tvBody.setText(i.getStringExtra("body"));
-        tvScreenName.setText(i.getStringExtra("name"));
+        tvScreenName.setText('@'+(i.getStringExtra("screenname")));
+        tvName.setText(i.getStringExtra("name"));
         tvTime.setText(i.getStringExtra("time"));
         Glide.with(this).load(i.getStringExtra("imageurl")).transform(new CenterInside(), new RoundedCorners(15)).into(ivProfileImage);;
 

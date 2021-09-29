@@ -24,7 +24,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tvScreenName"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -42,10 +42,10 @@
             android:layout_below="@+id/tvScreenName"
             android:layout_alignParentStart="true"
             android:layout_marginStart="2dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="4dp"
             android:autoLink="all"
             android:linksClickable="true"
-            android:textColor="#555252"
+            android:textColor="#323131"
             android:textSize="20sp"
             tools:text="This is my tweet!!!" />
 
@@ -91,6 +91,16 @@
             android:layout_marginStart="200dp"
             android:layout_marginTop="40dp"
             app:srcCompat="@drawable/ic_baseline_thumb_up_24" />
+
+        <TextView
+            android:id="@+id/tvScreenName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/ivProfileImage"
+            tools:text="/@name" />
 
     </RelativeLayout>
 </RelativeLayout>
