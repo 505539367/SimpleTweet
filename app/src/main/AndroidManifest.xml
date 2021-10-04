@@ -14,11 +14,14 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ComposeActivity"
+            android:exported="true" />
+        <activity
             android:name=".TimelineActivity"
             android:exported="true" />
         <activity
             android:name=".TweetDetailAcitivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
@@ -39,7 +42,6 @@
                     android:scheme="@string/intent_scheme" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
