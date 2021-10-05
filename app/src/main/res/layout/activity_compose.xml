@@ -36,13 +36,13 @@
 
     <TextView
         android:id="@+id/tvCharacterCount"
-        android:layout_width="73dp"
+        android:layout_width="94dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etCompose"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
         android:layout_toStartOf="@+id/btnTweet"
         android:text="0/280"
         android:textSize="16sp" />
